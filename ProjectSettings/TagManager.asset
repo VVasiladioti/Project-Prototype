@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Player2
+  - Player1
+  - Resources1
+  - Resources2
   - Resources
   layers:
   - Default
@@ -15,9 +19,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Player
+  - Player1
   - Ground
-  - 
+  - Player2
   - 
   - 
   - 

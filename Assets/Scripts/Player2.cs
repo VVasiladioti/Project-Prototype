@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player2 : MonoBehaviour {
     [SerializeField]
     private float speed;
 
@@ -10,12 +10,12 @@ public class Player : MonoBehaviour {
     public Rigidbody rb;
 
     private void OnCollisionEnter(Collision collision) {
-        if(collision.other.CompareTag("Resources")) {
+        if(collision.other.CompareTag("Resources2")) {
             collision.other.transform.parent = transform;
-            collision.other.tag = "Player";
+            collision.other.tag = "Player2";
             collision.other.GetComponent<ResourcesScript>().Target = gameObject;
         }
-        else if (collision.other.CompareTag("Player"))
+        else if (collision.other.CompareTag("Player2"))
         {
             collision.other.GetComponent<Rigidbody>().AddForce((collision.other.transform.position - transform.position).normalized * 100f);
         }
@@ -31,29 +31,30 @@ public class Player : MonoBehaviour {
     }
 
     private void UpdateKeys() {
-        if (Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.UpArrow)) {
             Vector3 temp = transform.position;
             temp.z += speed * Time.deltaTime;
             transform.position = temp;
         }
-        if (Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.LeftArrow)) {
             Vector3 temp = transform.position;
             temp.x -= speed * Time.deltaTime;
             transform.position = temp; 
         }
-        if (Input.GetKey(KeyCode.D)) {
+        if (Input.GetKey(KeyCode.RightArrow)) {
             Vector3 temp = transform.position;
             temp.x += speed * Time.deltaTime;
             transform.position = temp;
         }
-        if (Input.GetKey(KeyCode.S)) {
+        if (Input.GetKey(KeyCode.DownArrow)) {
             Vector3 temp = transform.position;
             temp.z -= speed * Time.deltaTime;
             transform.position = temp;
         }
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKey(KeyCode.RightControl)) {
            rb.velocity = new Vector3(0, 1, 0) * jump;
         }
     }
      
 }
+

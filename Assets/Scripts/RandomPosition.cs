@@ -27,7 +27,8 @@ public class RandomPosition : MonoBehaviour {
         TerrainRight = TerrainLeft + TerrainWidth;
         TerrainTop = TerrainBottom + TerrainLenght;
 
-        InstantiateRandomPosition("Prefabs/Cube", 50 , 10f);
+        InstantiateRandomPosition("Prefabs/Cube1", 50 , 10f);
+        InstantiateRandomPosition("Prefabs/Cube2", 50 , 10f);
     }
 
     public void InstantiateRandomPosition (string Resource, int Amount, float AddedHeight) {

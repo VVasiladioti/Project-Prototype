@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   jump: 5
-  rb: {fileID: 0}
+  rb: {fileID: 189824215}
 --- !u!54 &189824215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   jump: 5
-  rb: {fileID: 0}
+  rb: {fileID: 913977652}
 --- !u!1001 &3178148352835642110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -684,6 +684,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f7dc6c255ec9888428e33e9c1b472aa5, type: 2}
+    - target: {fileID: 3973068549309456756, guid: b7bd08c88659e7a42b9af676c3ac8edf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7bd08c88659e7a42b9af676c3ac8edf, type: 3}
 --- !u!1001 &4388326331267633077
@@ -744,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 831841036, guid: 3c3bef176855c9a46801af22be86e915, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831841032, guid: 3c3bef176855c9a46801af22be86e915, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3bef176855c9a46801af22be86e915, type: 3}

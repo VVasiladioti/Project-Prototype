@@ -11,7 +11,7 @@ public class Player2 : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if(collision.other.CompareTag("Resources2")) {
-            collision.other.transform.parent = transform;
+           
             collision.other.tag = "Player2";
             collision.other.GetComponent<ResourcesScript>().Target = gameObject;
         }

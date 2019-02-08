@@ -5,13 +5,12 @@ using UnityEngine;
 public class Player1 : MonoBehaviour {
     [SerializeField]
     private float speed;
-
     public float jump;
     public Rigidbody rb;
 
     private void OnCollisionEnter(Collision collision) {
         if(collision.other.CompareTag("Resources1")) {
-            collision.other.transform.parent = transform;
+            
             collision.other.tag = "Player1";
             collision.other.GetComponent<ResourcesScript>().Target = gameObject;
         }

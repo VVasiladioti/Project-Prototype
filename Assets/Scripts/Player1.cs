@@ -34,21 +34,25 @@ public class Player1 : MonoBehaviour {
             Vector3 temp = transform.position;
             temp.z += speed * Time.deltaTime;
             transform.position = temp;
+            transform.Rotate(90* Time.deltaTime,0,0);
         }
         if (Input.GetKey(KeyCode.A)) {
             Vector3 temp = transform.position;
             temp.x -= speed * Time.deltaTime;
             transform.position = temp; 
+            transform.Rotate(0,0,90* Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D)) {
             Vector3 temp = transform.position;
             temp.x += speed * Time.deltaTime;
             transform.position = temp;
+            transform.Rotate(0,0,-90* Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S)) {
             Vector3 temp = transform.position;
             temp.z -= speed * Time.deltaTime;
             transform.position = temp;
+            transform.Rotate(-90* Time.deltaTime,0,0);
         }
         if (Input.GetKey(KeyCode.Space)) {
            rb.velocity = new Vector3(0, 1, 0) * jump;

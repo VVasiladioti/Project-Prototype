@@ -13,10 +13,12 @@ public class Player1 : MonoBehaviour {
             
             collision.other.tag = "Player1";
             collision.other.GetComponent<ResourcesScript>().Target = gameObject;
+            Score1.scoreValue += 10;
         }
         else if (collision.other.CompareTag("Player1"))
         {
             collision.other.GetComponent<Rigidbody>().AddForce((collision.other.transform.position - transform.position).normalized * 100f);
+    
         }
     }
     // Start is called before the first frame update

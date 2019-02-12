@@ -14,5 +14,8 @@ public class Score2 : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         score2.text = "Score: " + scoreValue;
+        if (scoreValue == 10) {
+            GameManager.instance.Win();
+        }
     }
 }

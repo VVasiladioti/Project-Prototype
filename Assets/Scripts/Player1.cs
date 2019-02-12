@@ -6,7 +6,7 @@ public class Player1 : MonoBehaviour {
     [SerializeField]
     private float speed;
     public float jump;
-    public Rigidbody rb;
+    private Rigidbody rb = null;
 
     private void OnCollisionEnter(Collision collision) {
         if(collision.other.CompareTag("Resources1")) {
@@ -30,8 +30,7 @@ public class Player1 : MonoBehaviour {
     void Update() {
         UpdateKeys();
     }
-
-    private void UpdateKeys() {
+/*     private void UpdateKeys() {
         if (Input.GetKey(KeyCode.W)) {
             Vector3 temp = transform.position;
             temp.z += speed * Time.deltaTime;
@@ -61,4 +60,21 @@ public class Player1 : MonoBehaviour {
         }
     }
      
+}
+
+*/
+private void UpdateKeys() {
+	if (rb != null) {
+		if (Input.GetButton ("Horizontal")) {
+				rb.AddTorque(Vector3.back * Input.GetAxis("Horizontal")*10);
+			}
+		    if (Input.GetButton ("Vertical")) {
+				rb.AddTorque(Vector3.right * Input.GetAxis("Vertical")*10);
+			}
+			if (Input.GetButtonDown("Jump")) {
+				
+				rb.AddForce(Vector3.up*200);
+			}
+		}
+    }
 }

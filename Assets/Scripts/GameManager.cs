@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
     public GameObject P1WinText;
     public GameObject P2WinText;
-    public Text restartText;
-    public Text gameOverText;
-    bool gameOver;
-    bool restart;
+    
+    public float resetDelay;
 
     public bool player1win = false; 
     // Start is called before the first frame update
@@ -20,12 +19,6 @@ public class GameManager : MonoBehaviour {
             instance = this;
         else if (instance != null)
             Destroy (gameObject);
-
-    }
-
-    void Start() {
-        gameOver = false;
-        restart = false;
     }
 
     public void Win() {
@@ -35,7 +28,16 @@ public class GameManager : MonoBehaviour {
         else {
             P2WinText.SetActive(true);
         }
+        Time.timeScale = 0.5f;
+        Invoke ("Reset", resetDelay);
         
+    }
+
+    void Reset() {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("SampleScene");
+        Score1.scoreValue = 0;
+        Score2.scoreValue = 0;
     }
 
     

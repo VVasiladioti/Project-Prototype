@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player2 : MonoBehaviour {
-    [SerializeField]
-    private float speed;
-
+    
     public float jump;
     public Rigidbody rb;
+
 
     private void OnCollisionEnter(Collision collision) {
         if(collision.other.CompareTag("Resources2")) {
@@ -31,32 +30,21 @@ public class Player2 : MonoBehaviour {
     void Update() {
         UpdateKeys();
     }
-
-    private void UpdateKeys() {
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            Vector3 temp = transform.position;
-            temp.z += speed * Time.deltaTime;
-            transform.position = temp;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            Vector3 temp = transform.position;
-            temp.x -= speed * Time.deltaTime;
-            transform.position = temp; 
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            Vector3 temp = transform.position;
-            temp.x += speed * Time.deltaTime;
-            transform.position = temp;
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            Vector3 temp = transform.position;
-            temp.z -= speed * Time.deltaTime;
-            transform.position = temp;
-        }
-        if (Input.GetKey(KeyCode.RightControl)) {
-           rb.velocity = new Vector3(0, 1, 0) * jump;
-        }
-    }
      
+     private void UpdateKeys() {
+	if (rb != null) {
+		if (Input.GetButton ("Horizontal2")) {
+				rb.AddTorque(Vector3.back * Input.GetAxis("Horizontal2")*50); //10
+			}
+		    if (Input.GetButton ("Vertical2")) {
+				rb.AddTorque(Vector3.right * Input.GetAxis("Vertical2")*50);
+			}
+
+            if (Input.GetKey(KeyCode.LeftControl)) {
+                 rb.velocity = new Vector3(0, 1, 0) * jump;
+            }
+            
+		}
+    }
 }
 

@@ -6,7 +6,7 @@ public class ThirdPersonCamera : MonoBehaviour {
 public float camSmoothSpeed = 0.1f;
 public float camToPlayerRadius = 8.0f;
 public float camHeightOffset = 5.0f;
-public float camManualRotation = 90.0f;
+//public float camManualRotation = 90.0f;
 
 public Transform playerCam;
 private float camHorizontal;
@@ -14,7 +14,7 @@ private float camHorizontal;
 private bool isCamMoving = false;
 
 void Start() {
-    playerCam = Camera.main.transform;
+    //playerCam = Camera.main.transform;
 }
 void Update() {
       camHorizontal = Input.GetAxis ("RightHorizontal");  
